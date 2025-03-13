@@ -1,75 +1,91 @@
-# Nuxt Minimal Starter
+# Plateforme Collaborative - Frontend
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Ce projet est le frontend du test technique pour Ikomobi, le sujet était la plateforme collaborative.\
+Il est construit avec Nuxt 3 et utilise Nuxt UI pour l'interface.\
+L'utilisateur peut se connecter, s'inscrire, consulter ses groupes, accéder aux détails d'un groupe, gérer ses invitations, etc.
 
-## Setup
+## Table des matières
 
-Make sure to install dependencies:
+- [Technologies utilisées](#technologies-utilisées)
+- [Installation](#installation)
+- [Lancer l'application](#lancer-lapplication)
+- [Structure du projet](#structure-du-projet)
+- [Pages principales](#pages-principales)
+
+
+## Technologies utilisées
+
+- **Nuxt 3** – Frameworks de Vue 3 pour SSR/SSG.
+- **Vue 3** en Composition API.
+- **Nuxt UI** – Librairie de composants UI.
+- **Tailwind CSS** pour le style ( via nuxtUI ).
+- **fetch** – Pour la communication avec le backend.
+
+## Installation
+
+### Prérequis
+
+- Node.js
+- Yarn ou npm
+
+### Cloner le dépôt
+
+Cloner le dépôt sur votre machine locale :
 
 ```bash
-# npm
+git clone https://github.com/RoxBibopp/ikomobi-collab-front.git
+cd ikomobi-collab-front
+```
+
+### Installer les dépendances
+
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
+# ou
 yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+### Configuration
 
-Start the development server on `http://localhost:3000`:
+Si nécessaire, modifiez l'url des appels de l'api dans le fichier `composables/useApi` :
+
+
+## Lancer l'application
+
+Pour démarrer l'application en mode développement :
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
+# ou
 yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+L'application sera accessible sur [http://localhost:3000](http://localhost:3000).
 
-Build the application for production:
+## Structure du projet
 
-```bash
-# npm
-npm run build
+- **pages/** – pages de l'application.
+- **components/** – Composants réutilisables.
+- **composables/** – Fonctions réutilisables.
+- **middleware/** – middleware de redirection.
 
-# pnpm
-pnpm build
+## Pages principales
 
-# yarn
-yarn build
+### Login / Inscription
 
-# bun
-bun run build
-```
+- **/login** – Page de connexion.
+- **/register** – Page d'inscription.
 
-Locally preview production build:
+### Affichage des groupes
 
-```bash
-# npm
-npm run preview
+- **/** – Affiche la liste des groupes, ainsi qu'un bouton pour créer un groupe.
 
-# pnpm
-pnpm preview
+### Détails d'un groupe
 
-# yarn
-yarn preview
+- **/group/[id]** – Affiche les détails d'un groupe et les actions possible.
 
-# bun
-bun run preview
-```
+### Mes invitations
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- **Composant Invitations** – affiche la liste des invitations en attente.
+
+
